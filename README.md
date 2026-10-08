@@ -1,228 +1,264 @@
-# AI Video Detection Pipeline
+                    TRUTHLENS
+       AI-Powered Digital Media Authenticity
 
-A **multimodal deepfake detection system** that analyzes both **video** and **audio** to classify media as **real or fake** using an ensemble of deep learning models.
+       "Don't just detect. Understand the evidence."
 
----
+     [ Product Demo ] [ API ] [ Documentation ]
 
-## Overview
+---------------------------------------------------------
 
-Deepfakes are becoming increasingly realistic and difficult to detect.  
-This project addresses that challenge by combining multiple specialized models into a **single, robust ensemble system**.
+                    THE PROBLEM
 
-Instead of relying on one model, we leverage **audio + visual signals** to improve detection accuracy and reliability.
+    Synthetic media is becoming harder to verify.
 
----
+    Image       Audio       Video
+      │           │           │
+      └───────────┼───────────┘
+                  ▼
+           TRUTHLENS ENGINE
+                  ▼
+       Evidence + Uncertainty
+                  ▼
+        Authenticity Assessment
 
-## Demo
+---------------------------------------------------------
 
-<!-- TODO: Add demo here (GIF or video link)
-      -->
----
+                    WHY TRUTHLENS?
 
-## Problem
+       Multimodal      Explainable
+       Detection         Results
 
-Single-model deepfake detectors often fail when:
+       Uncertainty       Digital
+        Handling        Passport
 
-- Manipulations are subtle
-- Only audio *or* video is altered
-- The dataset differs from training data
+---------------------------------------------------------
 
----
+                  HOW IT WORKS
 
-## Solution
+        Upload
+          ↓
+     Media Inspection
+          ↓
+    ┌─────┼─────┐
+    ↓     ↓     ↓
+  Image Audio Video
+    ↓     ↓     ↓
+    └─────┼─────┘
+          ↓
+       Fusion
+          ↓
+   ┌──────┼──────┐
+   ↓      ↓      ↓
+Verdict Evidence Metadata
+          ↓
+   Authenticity Passport
 
-This system improves detection by:
+---------------------------------------------------------
 
-- Analyzing **both audio and video**
-- Combining multiple specialized models
-- Producing a **more reliable final prediction**
+                  DETECTION ENGINE
 
----
+     IMAGE              AUDIO              VIDEO
+     Xception           Wav2Vec2           Frame Analysis
 
-## Features
+---------------------------------------------------------
 
-- Video-based detection (EfficientNet, XceptionNet, MesoNet)
-- Audio spoof detection (AASIST)
-- Ensemble fusion (mean, voting, stacking)
-- FastAPI backend
-- Web interface for uploading videos
+                  RESULT EXAMPLE
 
----
+       Likely Manipulated
+       Confidence: 89.4%
 
-## System Architecture
+       ┌──────────────────────────────┐
+       │ Image       █████████  92%   │
+       │ Audio       ████████   86%   │
+       │ Video       █████████  91%   │
+       └──────────────────────────────┘
 
-![Pipeline Diagram](docs/pipeline.png)
+       Evidence:
+       • Facial manipulation signal
+       • Synthetic voice signal
+       • Cross-modal agreement
 
-The system separates an input video into audio and visual streams, processes each stream with specialized models, and combines the outputs into a final deepfake prediction.
+---------------------------------------------------------
 
----
+                 AUTHENTICITY PASSPORT
 
-## Quick Start
+        SHA-256
+        Metadata
+        Detector Results
+        Evidence
+        Verdict
+        Timestamp
 
-```bash
-git clone https://github.com/utmgdsc/AI-Video-Detection
-cd AI-Video-Detection
-```
+              → PDF REPORT
 
-### Install dependencies
+---------------------------------------------------------
 
-```bash
-pip install -r backend/requirements.txt
-cd frontend
-npm install
-```
+                  ARCHITECTURE
 
----
+ Frontend → FastAPI → Detection Engines
+                       ↓
+                     Fusion
+                       ↓
+                 Evidence Layer
+                       ↓
+                Passport Generator
 
-## Model Weights
+---------------------------------------------------------
 
-Download required pretrained weights and place them in the specified paths below:
+                  TECH STACK
 
-| Model | Download from | Place in |
-|-------|--------------|----------|
-| XceptionNet | [https://drive.google.com/drive/folders/1GNtk3hLq6sUGZCGx8fFttvyNYH8nrQS8] | `backend/models/XceptionNet-Detector/Deepfake-Detection/weights/deepfake_c0_xception.pkl` |
-| EfficientNet | Trained from scratch using FaceForensics++ | outputs/checkpoints/best_model.pth |
-| MesoNet | [https://github.com/DariusAf/MesoNet/tree/master/weights] | `backend/models/MesoNet/weights/Meso4_custom_weight1_epoch7.h5` |
-| AASIST | [https://github.com/clovaai/aasist/blob/main/models/weights/AASIST.pth] | `backend/models/AASIST/aasist_detector/weights/AASIST.pth` |
+ Python • FastAPI • PyTorch • Transformers
+ OpenCV • Librosa • React • TypeScript
+ Tailwind • CUDA • ReportLab
 
-> Note: EfficientNet is trained as part of this pipeline. No pretrained weights are required. To train EfficientNet from scratch:
+---------------------------------------------------------
 
-```bash
-python backend/models/EfficientNet/train.py
-```
+                  LIMITATIONS
 
----
+   Model predictions ≠ absolute truth
 
-## Running the App
+---------------------------------------------------------
 
-### Start backend
+                  ROADMAP
 
-```bash
-export PYTHONPATH=.
-python -m uvicorn backend.main:app --reload
-```
-
-### Start frontend
-
-```bash
-cd frontend
-npm run dev
-```
-
----
-## Results
-
-### Overall Performance
-
-| Metric | Value |
-|--------|-------|
-| Best Accuracy | **84.8%** |
-| Typical Accuracy | ~70% |
+   C2PA • Provenance • Lip Sync
+   Temporal Analysis • Public Verification
 
-### Ensemble Comparison
+---------------------------------------------------------
 
-| Method | Accuracy |
-|--------|---------|
-| Weighted Voting | 72.8% |
-| Majority Voting | 71.2% |
-| Stacking | 71.0% |
-| Mean | 61.6% |
+                    TEAM
 
-### Key Insights
+              Yash Kharwar
+                              TRUTHLENS
+       AI-Powered Digital Media Authenticity
 
-- Combining audio + video improves robustness
-- Ensemble reduces weaknesses of individual models
-- Video models drive most performance
-- Audio helps detect edge cases
+       "Don't just detect. Understand the evidence."
 
----
+     [ Product Demo ] [ API ] [ Documentation ]
 
-## Limitations
+---------------------------------------------------------
 
-- Performance drops on unseen datasets
-- Audio model generalization is weaker
-- Face detection failures affect results
-- Not yet optimized for real-time use
+                    THE PROBLEM
 
----
+    Synthetic media is becoming harder to verify.
 
-## Project Structure
+    Image       Audio       Video
+      │           │           │
+      └───────────┼───────────┘
+                  ▼
+           TRUTHLENS ENGINE
+                  ▼
+       Evidence + Uncertainty
+                  ▼
+        Authenticity Assessment
 
-```
-backend/
-├── models/            # Model implementations and wrappers
-│   ├── wrappers/      # Standardized interfaces for each model
-│   │   ├── xception.py
-│   │   ├── efficientnet.py
-│   │   ├── mesonet.py
-│   │   └── aasist.py
-│   └── ...            # Model-specific code and weights
-├── handlers/          # Audio and video processing pipeline
-│   ├── audio_handler.py
-│   ├── video_handler.py
-│   ├── facial_analyzer.py
-│   └── image_analyzer.py
-├── preprocessing/     # Data preprocessing utilities
-│   ├── video_processor.py
-│   ├── audio_processor.py
-│   └── image_processor.py
-├── services/          # Core detection and inference logic
-├── main.py            # Backend entry point (FastAPI app)
-└── requirements.txt   # Backend dependencies
+---------------------------------------------------------
 
-frontend/
-├── src/               # React frontend source code
-├── public/            # Static assets
-└── package.json       # Frontend dependencies
+                    WHY TRUTHLENS?
 
-docs/
-├── models/            # Model documentation
-├── datasets/          # Dataset notes and evaluation
-└── meeting-notes/     # Project logs and progress tracking
-```
+       Multimodal      Explainable
+       Detection         Results
 
-This structure separates model implementations, preprocessing, and inference logic, allowing each component to be developed and tested independently while supporting easy integration into the overall pipeline.
+       Uncertainty       Digital
+        Handling        Passport
 
----
+---------------------------------------------------------
 
-## Resources
+                  HOW IT WORKS
 
-- [Google Drive Folder](https://drive.google.com/drive/folders/1iD2lBPm-zB8x6PrBZRFfvWOGQkOXwx4r?usp=drive_link)
-- [Presentation Deck 1](https://docs.google.com/presentation/d/1j3rwMip1ntUX6QFJGsPpEAPUNxofB7W2/edit?usp=sharing&ouid=104927623345744943216&rtpof=true&sd=true)
-- [Project Idea](PROJECT_IDEA.md)
+        Upload
+          ↓
+     Media Inspection
+          ↓
+    ┌─────┼─────┐
+    ↓     ↓     ↓
+  Image Audio Video
+    ↓     ↓     ↓
+    └─────┼─────┘
+          ↓
+       Fusion
+          ↓
+   ┌──────┼──────┐
+   ↓      ↓      ↓
+Verdict Evidence Metadata
+          ↓
+   Authenticity Passport
 
----
+---------------------------------------------------------
 
-## Documentation
+                  DETECTION ENGINE
 
-Additional documentation is available in the `docs/` directory, including model-specific notes, dataset documentation, and meeting records.
+     IMAGE              AUDIO              VIDEO
+     Xception           Wav2Vec2           Frame Analysis
 
-| Folder | Description |
-|--------|-------------|
-| [docs/models/](docs/models/) | Model documentation (one folder per model) |
-| [docs/datasets/](docs/datasets/) | Dataset evaluation and selection docs |
-| [docs/weekly-plan.md](docs/weekly-plan.md) | Project roadmap and milestone checklist |
-| [docs/meeting-notes/](docs/meeting-notes/) | Project log and meeting notes |
-| [docs/templates/](docs/templates/) | Templates for model notes and setup guides |
+---------------------------------------------------------
 
-### Model Folders
+                  RESULT EXAMPLE
 
-- [docs/models/xception/](docs/models/xception/) — XceptionNet
-- [docs/models/efficientnet/](docs/models/efficientnet/) — EfficientNet
-- [docs/models/mesonet/](docs/models/mesonet/) — MesoNet
-- [docs/models/aasist/](docs/models/aasist/) — AASIST (audio-based)
+       Likely Manipulated
+       Confidence: 89.4%
 
-## Project Notes
+       ┌──────────────────────────────┐
+       │ Image       █████████  92%   │
+       │ Audio       ████████   86%   │
+       │ Video       █████████  91%   │
+       └──────────────────────────────┘
 
-Meeting and progress notes are in [docs/meeting-notes/](docs/meeting-notes/).
+       Evidence:
+       • Facial manipulation signal
+       • Synthetic voice signal
+       • Cross-modal agreement
 
-## Contributors
+---------------------------------------------------------
 
-- Laiba Khan
-- Hung-Mao Wu
-- Wei Lin
-- Frank Bi
-- Yousef Abdelhadi
+                 AUTHENTICITY PASSPORT
 
+        SHA-256
+        Metadata
+        Detector Results
+        Evidence
+        Verdict
+        Timestamp
 
+              → PDF REPORT
 
+---------------------------------------------------------
+
+                  ARCHITECTURE
+
+ Frontend → FastAPI → Detection Engines
+                       ↓
+                     Fusion
+                       ↓
+                 Evidence Layer
+                       ↓
+                Passport Generator
+
+---------------------------------------------------------
+
+                  TECH STACK
+
+ Python • FastAPI • PyTorch • Transformers
+ OpenCV • Librosa • React • TypeScript
+ Tailwind • CUDA • ReportLab
+
+---------------------------------------------------------
+
+                  LIMITATIONS
+
+   Model predictions ≠ absolute truth
+
+---------------------------------------------------------
+
+                  ROADMAP
+
+   C2PA • Provenance • Lip Sync
+   Temporal Analysis • Public Verification
+
+---------------------------------------------------------
+
+                    TEAM
+
+              Yash Kharwar - Backend & ML/AI
+              Abhishek gupta - Frontend & Deployment
+              Vaishnavi gupta - Research & Product/Presentation
